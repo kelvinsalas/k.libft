@@ -6,7 +6,7 @@
 /*   By: ksalas-o <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 13:35:15 by ksalas-o          #+#    #+#             */
-/*   Updated: 2024/02/13 10:24:09 by ksalas-o         ###   ########.fr       */
+/*   Updated: 2024/02/13 11:15:45 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trim[i] = '\0';
 	return (trim);
 }
-
+/*
 int	main()
 {
 	char s1[] ="no distration";
     printf("%s\n", ft_strtrim(s1, "te"));
 
 	return 0;
-}
+}*/
