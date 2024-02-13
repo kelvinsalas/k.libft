@@ -6,7 +6,7 @@
 /*   By: ksalas-o <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 11:28:56 by ksalas-o          #+#    #+#             */
-/*   Updated: 2024/02/13 11:55:04 by ksalas-o         ###   ########.fr       */
+/*   Updated: 2024/02/13 12:27:23 by ksalas-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;
-	size_t	a;
 	size_t	lng;
 	char	*result;
 
