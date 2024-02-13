@@ -6,12 +6,12 @@
 /*   By: ksalas-o <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:52:34 by ksalas-o          #+#    #+#             */
-/*   Updated: 2024/02/13 10:38:01 by ksalas-o         ###   ########.fr       */
+/*   Updated: 2024/02/13 11:09:24 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+// obtener la cantidad de letras encontradas
 static size_t	count_words(char const *s, char c)
 {
 	size_t	count;
@@ -33,6 +33,7 @@ static size_t	count_words(char const *s, char c)
 	return (count);
 }
 
+// para obtener el largo de la string hasta donde se encuentre el caracter 'c'
 static size_t	get_word_len(char const *s, char c)
 {
 	size_t	i;
@@ -43,7 +44,7 @@ static size_t	get_word_len(char const *s, char c)
 	return (i);
 }
 
-
+// para liberar espacio del array
 static void	free_array(size_t i, char **array)
 {
 	while (i > 0)
@@ -54,6 +55,7 @@ static void	free_array(size_t i, char **array)
 	free(array);
 }
 
+// para dividir la string
 static char	**split(char const *s, char c, char **array, size_t words_count)
 {
 	size_t	i;
@@ -79,6 +81,7 @@ static char	**split(char const *s, char c, char **array, size_t words_count)
 	return (array);
 }
 
+// la funcion ft_split que llamara las demas funciones
 char	**ft_split(char const *s, char c)
 {
 	char	**array;
@@ -121,7 +124,7 @@ int main()
 		return 1;
 	}
 	print_string_array(result);
-
+	// Liberar memoria
 	int i = 0;
 	while (result[i])
 	{
