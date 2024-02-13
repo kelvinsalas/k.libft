@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksalas-o <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/31 09:41:26 by ksalas-o          #+#    #+#             */
-/*   Updated: 2024/02/13 11:54:27 by ksalas-o         ###   ########.fr       */
+/*   Created: 2024/02/13 12:04:06 by ksalas-o          #+#    #+#             */
+/*   Updated: 2024/02/13 12:04:35 by ksalas-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	size_t	i;
+	size_t			len;
+	unsigned int	i;
 
+	len = strlen(s);
 	i = 0;
-	while (src[i])
+	while (i < len)
+	{
+		f(i, &s[i]);
 		i++;
-	if (!dstsize)
-		return (i);
-	while (--dstsize != 0 && *src)
-		*dst++ = *src++;
-	*dst = '\0';
-	return (i);
+	}
 }
 /*
-int main()
-{
-        int i;
-        scanf("%d", &i);
+int main() {
+    char s[] = "HeLlo..""MIAU""..WorLDDD";
+    ft_striteri(s, ft_tolower);
+    ft_striteri(s, noalpha_space);
+    printf("%s\n", s);
 
-        char src[] = "nice to meeto you";
-        char dst[i];
-        printf("%zu\n%s", ft_strlcpy(dst, src, sizeof(dst)), dst);
-
-        return (0);
+    return 0;
 }*/

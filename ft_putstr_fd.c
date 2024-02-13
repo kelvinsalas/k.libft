@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksalas-o <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/31 09:41:26 by ksalas-o          #+#    #+#             */
-/*   Updated: 2024/02/13 11:54:27 by ksalas-o         ###   ########.fr       */
+/*   Created: 2024/02/13 12:07:16 by ksalas-o          #+#    #+#             */
+/*   Updated: 2024/02/13 12:08:49 by ksalas-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (src[i])
-		i++;
-	if (!dstsize)
-		return (i);
-	while (--dstsize != 0 && *src)
-		*dst++ = *src++;
-	*dst = '\0';
-	return (i);
+	if (s != NULL)
+		while (s[i])
+			write(fd, &s[i++], 1);
 }
-/*
-int main()
+
+/*int main()
 {
-        int i;
-        scanf("%d", &i);
-
-        char src[] = "nice to meeto you";
-        char dst[i];
-        printf("%zu\n%s", ft_strlcpy(dst, src, sizeof(dst)), dst);
-
-        return (0);
+	char	str[] = "Hola mundo";
+	ft_putstr_fd(str, 1);
+	return (0);
 }*/

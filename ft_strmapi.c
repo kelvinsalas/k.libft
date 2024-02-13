@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksalas-o <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/31 09:41:26 by ksalas-o          #+#    #+#             */
-/*   Updated: 2024/02/13 11:54:27 by ksalas-o         ###   ########.fr       */
+/*   Created: 2024/02/13 12:03:21 by ksalas-o          #+#    #+#             */
+/*   Updated: 2024/02/13 12:03:38 by ksalas-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
+	size_t			len;
+	char			*result;
+	unsigned int	i;
 
+	if (!s || !f)
+		return (NULL);
+	len = strlen(s);
+	result = (char *)malloc(len + 1);
+	if (!result)
+		return (NULL);
 	i = 0;
-	while (src[i])
+	while (i < len)
+	{
+		result[i] = f(i, s[i]);
 		i++;
-	if (!dstsize)
-		return (i);
-	while (--dstsize != 0 && *src)
-		*dst++ = *src++;
-	*dst = '\0';
-	return (i);
+	}
+	result[i] = '\0';
+	return (result);
 }
 /*
-int main()
-{
-        int i;
-        scanf("%d", &i);
+int main() {
+    char *s = "hello, world";
+    printf("%s\n", ft_strmapi(s,ft_toupper));
 
-        char src[] = "nice to meeto you";
-        char dst[i];
-        printf("%zu\n%s", ft_strlcpy(dst, src, sizeof(dst)), dst);
-
-        return (0);
+    return 0;
 }*/
