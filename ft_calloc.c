@@ -6,7 +6,7 @@
 /*   By: ksalas-o <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 14:16:20 by ksalas-o          #+#    #+#             */
-/*   Updated: 2024/02/13 11:55:12 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/13 11:57:21 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*memory;
 
-	if (count && size && count > (UINT_MAX / size))
+	if (count && size && count > (SIZE_MAX / size))
 		return (NULL);
 	memory = malloc(count * size);
 	if (!memory)
