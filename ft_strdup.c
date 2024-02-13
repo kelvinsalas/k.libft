@@ -6,20 +6,33 @@
 /*   By: ksalas-o <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 14:17:15 by ksalas-o          #+#    #+#             */
-/*   Updated: 2024/01/31 09:24:48 by ksalas-o         ###   ########.fr       */
+/*   Updated: 2024/02/13 12:27:39 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static void	ft_strcpy(char *ptr, const char *s1)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i])
+	{
+		ptr[i] = s1[i];
+		i++;
+	}
+	ptr[i] = '\0';
+}
+
 char	*ft_strdup(const char *s1)
 {
 	char	*ptr;
 
-	ptr = malloc(strlen(s1) + 1);
+	ptr = malloc(ft_strlen(s1) + 1);
 	if (ptr == NULL)
 		return (NULL);
-	strcpy(ptr, s1);
+	ft_strcpy(ptr, s1);
 	return (ptr);
 }
 /*
