@@ -6,7 +6,7 @@
 /*   By: ksalas-o <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:52:34 by ksalas-o          #+#    #+#             */
-/*   Updated: 2024/02/13 11:12:40 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/13 11:22:02 by ksalas-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ char	**ft_split(char const *s, char c)
 	array = split(s, c, array, words);
 	return (array);
 }
-/*
+
 void print_string_array(char **arr)
 {
 	if (!arr)
@@ -132,4 +132,4 @@ int main()
 	}
 	free(result);
 	return 0;
-}*/
+}
