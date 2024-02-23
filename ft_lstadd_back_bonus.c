@@ -6,28 +6,28 @@
 /*   By: ksalas-o <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 12:36:58 by ksalas-o          #+#    #+#             */
-/*   Updated: 2024/02/13 12:43:11 by ksalas-o         ###   ########.fr       */
+/*   Updated: 2024/02/23 11:17:05 by ksalas-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    t_list  *temp;
+	t_list	*temp;
 
-    if (!new || !lst)
-        return ;
-    new->next = NULL;
-    if (!*(lst))
-    {
-        *lst = new;
-        return ;
-    }
-    temp = *lst;
-    while (temp->next)
-        temp = temp->next;
-    temp->next = new;
+	if (!new || !lst)
+		return ;
+	new->next = NULL;
+	if (!*(lst))
+	{
+		*lst = new;
+		return ;
+	}
+	temp = *lst;
+	while (temp->next)
+		temp = temp->next;
+	temp->next = new;
 }
 /*
 int main()
@@ -49,3 +49,4 @@ int main()
 
     free(new_node);
     return 0;
+*/
